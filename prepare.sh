@@ -50,6 +50,16 @@ if [ -f "feeds/packages/lang/rust/Makefile" ]; then
    bash -c "cd feeds/packages && git checkout -- \"lang/rust/Makefile\""
 fi
 
+# Add xgp-v3-screen
+if [ -d "package/xgp-v3-screen" ] || [ -L "package/xgp-v3-screen" ]; then
+    echo "package/xgp-v3-screen exists, removing old version"
+    rm -rf package/xgp-v3-screen
+fi
+
+git -C package clone --depth 1 https://github.com/junhong-l/xgp-v3-screen.git || { echo "git clone xgp-v3-screen failed"; exit 1; }
+
+echo "xgp-v3-screen is ready"
+
 echo "update feeds"
 ./scripts/feeds update -a || { echo "update feeds failed"; exit 1; }
 echo "install feeds"
