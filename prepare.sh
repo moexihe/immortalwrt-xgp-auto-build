@@ -32,15 +32,6 @@ echo "update files"
 rm -rf files
 cp -r ../files .
 
-# WLAN Compatibility Fix
-mkdir -p ./files/lib/wifi/
-cp package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc ./files/lib/wifi/mac80211.uc
-sed -i 's/const bands_order = \[ "6G", "5G", "2G" \];/const bands_order = [ "2G", "5G", "6G" ];/' ./files/lib/wifi/mac80211.uc
-echo "diff lib/wifi/mac80211.uc with builder repo:"
-diff ../files/lib/wifi/mac80211.uc ./files/lib/wifi/mac80211.uc
-echo "diff lib/wifi/mac80211.uc with immortalwrt repo:"
-diff package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc ./files/lib/wifi/mac80211.uc
-
 # Add TD-TECH option id patch
 echo "add TD-TECH option id patch"
 cp ../999-add-TD-TECH-option-id.patch ./target/linux/rockchip/patches-6.6/999-add-TD-TECH-option-id.patch
