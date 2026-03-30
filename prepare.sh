@@ -25,8 +25,6 @@ cat feeds.conf.default > feeds.conf
 echo "" >> feeds.conf
 echo "src-git qmodem https://github.com/FUjr/QModem.git;main" >> feeds.conf
 echo "src-git istore https://github.com/linkease/istore;main" >> feeds.conf
-echo "src-git lucibandix https://github.com/timsaya/luci-app-bandix.git" >> feeds.conf
-echo "src-git bandix https://github.com/timsaya/openwrt-bandix.git" >> feeds.conf
 
 echo "update files"
 rm -rf files
