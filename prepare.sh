@@ -16,7 +16,7 @@ if [ -d "immortalwrt" ]; then
     git clean -fd
 else
     echo "repo dir not exists"
-    git clone -b openwrt-24.10  "https://github.com/immortalwrt/immortalwrt" || { echo "git clone failed"; exit 1; }
+    git clone -b openwrt-25.12  "https://github.com/immortalwrt/immortalwrt" || { echo "git clone failed"; exit 1; }
     cd immortalwrt
 fi
 
@@ -29,15 +29,6 @@ echo "src-git istore https://github.com/linkease/istore;main" >> feeds.conf
 echo "update files"
 rm -rf files
 cp -r ../files .
-
-# Add TD-TECH option id patch
-echo "add TD-TECH option id patch"
-cp ../999-add-TD-TECH-option-id.patch ./target/linux/rockchip/patches-6.6/999-add-TD-TECH-option-id.patch
-ls -lah ./target/linux/rockchip/patches-6.6/999-add-TD-TECH-option-id.patch
-
-if [ -f "feeds/packages/lang/rust/Makefile" ]; then
-   bash -c "cd feeds/packages && git checkout -- \"lang/rust/Makefile\""
-fi
 
 # Add xgp-v3-screen
 if [ -d "package/xgp-v3-screen" ] || [ -L "package/xgp-v3-screen" ]; then
