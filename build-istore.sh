@@ -15,7 +15,7 @@ diff ../xgp.config .config | grep -e "^>" | grep -v "^> #"
 echo "check device exist"
 grep -Fxq "CONFIG_TARGET_rockchip_armv8_DEVICE_nlnet_xiguapi-v3=y" .config || exit 1
 echo "check istore exist"
-grep -Fxq "CONFIG_PACKAGE_luci-app-store=y" .config
+grep -Fxq "CONFIG_PACKAGE_luci-app-store=y" .config || exit 1
 
 year=$(date +%y)
 month=$(date +%-m)
