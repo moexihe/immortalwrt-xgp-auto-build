@@ -157,7 +157,6 @@ jobs:
       - name: Rename image
         run: |
           mv release_assets/immortalwrt-rockchip-armv8-nlnet_xiguapi-v3-squashfs-sysupgrade.img.gz release_assets/${{ steps.release-prepare.outputs.IMAGE_PREFIX }}squashfs-sysupgrade.img.gz
-          mv release_assets/immortalwrt-with-istore-rockchip-armv8-nlnet_xiguapi-v3-squashfs-sysupgrade.img.gz release_assets/${{ steps.release-prepare.outputs.IMAGE_PREFIX }}istore-squashfs-sysupgrade.img.gz
       - name: Create release
         uses: softprops/action-gh-release@v2
         with:
