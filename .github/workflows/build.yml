@@ -69,14 +69,6 @@ jobs:
           cp immortalwrt/bin/targets/rockchip/armv8/version.buildinfo release_assets/ || true
           cp immortalwrt/bin/targets/rockchip/armv8/sha256sums release_assets/ || true
           bash -c "cd immortalwrt && git log -n 30" > release_assets/recent_git.log
-      - name: Build with istore
-        run: |
-          ./build-istore.sh
-      - name: Prepare istore release assets
-        run: |
-          mkdir -p release_assets
-          cp immortalwrt/bin/targets/rockchip/armv8/immortalwrt-with-istore-rockchip-armv8-nlnet_xiguapi-v3-squashfs-sysupgrade.img.gz release_assets/ || true
-          cp immortalwrt/bin/targets/rockchip/armv8/sha256sums release_assets/sha256sums-istore || true
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
