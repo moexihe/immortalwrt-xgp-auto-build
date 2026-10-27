@@ -1,3 +1,0 @@
-config screen_brightness 'config'
-	option enabled '0'
-	option brightness '128'
