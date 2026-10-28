@@ -35,7 +35,7 @@ fi
 echo "add feeds"
 cat feeds.conf.default > feeds.conf
 echo "" >> feeds.conf
-echo "src-git qmodem https://github.com/FUjr/QModem.git;stable" >> feeds.conf
+echo "src-git qmodem https://github.com/FUjr/QModem.git;main" >> feeds.conf
 # echo "src-git qmodem https://github.com/zzzz0317/QModem.git;v3.0.2" >> feeds.conf
 echo "src-git istore https://github.com/linkease/istore;main" >> feeds.conf
 echo "update files"

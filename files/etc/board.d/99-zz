@@ -1,9 +1,0 @@
-. /lib/functions/uci-defaults.sh
-
-board_config_update
-
-ucidef_set_hostname "XGPV3"
-ucidef_set_country "US"
-ucidef_set_wireless "all" "zzXGP" "psk2+ccmp" "xgpxgpxgp"
-
-board_config_flush
